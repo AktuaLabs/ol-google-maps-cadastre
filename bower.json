@@ -1,0 +1,27 @@
+{
+  "name": "open-layers",
+  "homepage": "https://github.com/adridev/ol-google-maps-cadastre",
+  "authors": [
+    "Adrián Ríos <adrian.web.dev@gmail.com>"
+  ],
+  "description": "POC of integration between Spain cadastre WMS, Openlayers and Google Maps",
+  "main": "index.html",
+  "keywords": [
+    "Cadastre",
+    "openlayers",
+    "gmaps"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "openlayers": "^4.1.0"
+  }
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Open Layers test</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/ol3gm.css" type="text/css"/>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div id="logo"><img src="img/aktua_atenea_logo_navbar.png" alt=""></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <h1><b>[POC]</b> OpenLayer + Spain cadaster (ref. 04006A02300607)</h1>
+        </div>
+    </div>
+    <div class="row controls">
+        <div class="col-md-12">
+            <span class="btn-group-label">Single Img. </span>
+            <div class="btn-group" role="group">
+                <button class="btn btn-default" id="show-parcel">Parcel</button>
+                <button class="btn btn-default" id="show-zoning">Zoning</button>
+                <button class="btn btn-default" id="show-full">Full</button>
+            </div>
+            <span class="btn-group-label">Tile </span>
+            <div class="btn-group" role="group">
+                <button class="btn btn-default" id="show-tile-parcel">Parcel</button>
+                <button class="btn btn-default" id="show-tile-full">Full</button>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div id="map"></div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyBlNq7l0h7qQoYYvNNJinVzte3uRc1N4p8"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="js/ol3gm-debug.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>
