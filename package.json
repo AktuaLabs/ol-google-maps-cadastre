@@ -1,0 +1,35 @@
+{
+  "name": "open-layers",
+  "version": "1.0.0",
+  "description": "POC of integration between Spain cadastre WMS, Openlayers and Google Maps",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adridev/ol-google-maps-cadastre.git"
+  },
+  "keywords": [
+    "cadastre",
+    "gmaps",
+    "openlayers"
+  ],
+  "author": "adridev <adrian.web.dev@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adridev/ol-google-maps-cadastre/issues"
+  },
+  "homepage": "https://github.com/adridev/ol-google-maps-cadastre#readme",
+  "devDependencies": {
+    "babel-loader": "^7.0.0",
+    "lodash": "^4.17.4",
+    "webpack": "^2.4.1",
+    "webpack-dev-server": "^2.4.5"
+  },
+  "dependencies": {
+    "path": "^0.12.7",
+    "xml-js": "^1.2.2"
+  }
+}
