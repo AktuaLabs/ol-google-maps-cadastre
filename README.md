@@ -2,15 +2,22 @@
 
 POC of integration between Spain cadastre WMS, Openlayers and Google Maps
 
-## Installation
+#### Installation
 
 
 ```
-npm install bower
+npm install
 
-bower install
+npm run build
 ```
 
+#### Run 
+
+```
+npm run start
+```
+
+Application could be accessed at localhost:8080
 
 Openlayers http://openlayers.org/
 
