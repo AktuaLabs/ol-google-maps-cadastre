@@ -1,8 +1,12 @@
-var center = [-241192.1, 4499632.92];
+import jQuery from 'jquery';
+import bootstrap from 'bootstrap-webpack';
+import _ from 'lodash';
 
-var googleLayer = new olgm.layer.Google();
+let center = [-241192.1, 4499632.92];
 
-var tileWMSLayerParcel = new ol.layer.Tile({
+let googleLayer = new olgm.layer.Google();
+
+let tileWMSLayerParcel = new ol.layer.Tile({
     extent: [-241386.84, 4499447.03, -241018.79, 4499817.59],
     source: new ol.source.TileWMS({
         crossOrigin: 'anonymous',
@@ -13,10 +17,10 @@ var tileWMSLayerParcel = new ol.layer.Tile({
         },
         serverType: 'mapserver',
     }),
-    visible: false
+    visible: true
 });
 
-var tileWMSLayerFull = new ol.layer.Tile({
+let tileWMSLayerFull = new ol.layer.Tile({
     extent: [-241386.84, 4499447.03, -241018.79, 4499817.59],
     source: new ol.source.TileWMS({
         crossOrigin: 'anonymous',
@@ -31,7 +35,7 @@ var tileWMSLayerFull = new ol.layer.Tile({
     visible: false
 });
 
-var imageWMSLayerFull = new ol.layer.Image({
+let imageWMSLayerFull = new ol.layer.Image({
     extent: [-241386.84, 4499447.03, -241018.79, 4499817.59],
     source: new ol.source.ImageWMS({
         crossOrigin: 'anonymous',
@@ -44,10 +48,10 @@ var imageWMSLayerFull = new ol.layer.Image({
         },
         serverType: 'mapserver',
     }),
-    visible: true
+    visible: false
 });
 
-var imageWMSLayerParcel = new ol.layer.Image({
+let imageWMSLayerParcel = new ol.layer.Image({
     extent: [-241386.84, 4499447.03, -241018.79, 4499817.59],
     source: new ol.source.ImageWMS({
         crossOrigin: 'anonymous',
@@ -62,7 +66,7 @@ var imageWMSLayerParcel = new ol.layer.Image({
     visible: false,
 });
 
-var imageWMSLayerZoning = new ol.layer.Image({
+let imageWMSLayerZoning = new ol.layer.Image({
     extent: [-241386.84, 4499447.03, -241018.79, 4499817.59],
     source: new ol.source.ImageWMS({
         crossOrigin: 'anonymous',
@@ -77,7 +81,7 @@ var imageWMSLayerZoning = new ol.layer.Image({
     visible: false
 });
 
-var map = new ol.Map({
+let map = new ol.Map({
     // use OL3-Google-Maps recommended default interactions
     interactions: olgm.interaction.defaults(),
     layers: [
@@ -91,20 +95,23 @@ var map = new ol.Map({
     target: 'map',
     view: new ol.View({
         center: center,
-        zoom: 14
+        zoom: 16
     })
 });
 
-var olGM = new olgm.OLGoogleMaps({map: map}); // map is the ol.Map instance
+let olGM = new olgm.OLGoogleMaps({map: map}); // map is the ol.Map instance
 olGM.activate();
 
-$(document).ready(function () {
-    $('controls').find('button').click(function () {
+(function ($) {
+
+    let $buttons = $('.controls').find('button');
+    $buttons.click(function (e) {
+        console.log('enter');
+        $buttons.removeClass('active');
         $(this).addClass('active');
-        $(this).siblings('button').removeClass('active');
     });
 
-    $('#show-full').click(function () {
+    $('#show-full').click(function (e) {
         olGM.ol3map.getLayers().forEach(function (layer) {
             if (!(layer instanceof olgm.layer.Google)) {
                 layer.setVisible(false);
@@ -113,7 +120,7 @@ $(document).ready(function () {
         imageWMSLayerFull.setVisible(true);
     });
 
-    $('#show-parcel').click(function () {
+    $('#show-parcel').click(function (e) {
         olGM.ol3map.getLayers().forEach(function (layer) {
             if (!(layer instanceof olgm.layer.Google)) {
                 layer.setVisible(false);
@@ -122,7 +129,7 @@ $(document).ready(function () {
         imageWMSLayerParcel.setVisible(true);
     });
 
-    $('#show-zoning').click(function () {
+    $('#show-zoning').click(function (e) {
         olGM.ol3map.getLayers().forEach(function (layer) {
             if (!(layer instanceof olgm.layer.Google)) {
                 layer.setVisible(false);
@@ -131,7 +138,7 @@ $(document).ready(function () {
         imageWMSLayerZoning.setVisible(true);
     });
 
-    $('#show-tile-parcel').click(function () {
+    $('#show-tile-parcel').click(function (e) {
         olGM.ol3map.getLayers().forEach(function (layer) {
             if (!(layer instanceof olgm.layer.Google)) {
                 layer.setVisible(false);
@@ -140,7 +147,7 @@ $(document).ready(function () {
         tileWMSLayerParcel.setVisible(true);
     });
 
-    $('#show-tile-full').click(function () {
+    $('#show-tile-full').click(function (e) {
         olGM.ol3map.getLayers().forEach(function (layer) {
             if (!(layer instanceof olgm.layer.Google)) {
                 layer.setVisible(false);
@@ -148,4 +155,4 @@ $(document).ready(function () {
         });
         tileWMSLayerFull.setVisible(true);
     });
-});
+})(jQuery);

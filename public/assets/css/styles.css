@@ -1,5 +1,5 @@
 body {
-    color: white;
+    color: white !important;
     background: #073855 url('../img/fondo3.jpg') no-repeat  center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -15,9 +15,8 @@ body {
     width: 100%;
 }
 
-h1 {
-    text-align: center;
-    margin-bottom: 50px;
+.title {
+    padding: 50px 0;
 }
 
 .controls .btn-group-label {
