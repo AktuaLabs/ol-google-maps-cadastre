@@ -13,8 +13,8 @@ $('#search-form').on('submit', function (e) {
 
     const reference = $(this).find('[name=refcat]').val();
     cadaster.fetchFeature(reference, (feature) => {
-        gmap.addVectorLayer(feature.coords);
-        gmap.setCenter(feature.center);
+        gmap.addVectorLayer(feature.posList);
+        gmap.setCenter(feature.pos);
         gmap.setZoom(16);
     });
 });
