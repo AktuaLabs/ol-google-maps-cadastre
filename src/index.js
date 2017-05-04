@@ -1,6 +1,5 @@
 import jQuery from 'jquery';
 import bootstrap from 'bootstrap-webpack';
-import _ from 'lodash';
 
 let center = [-241192.1, 4499632.92];
 
@@ -81,6 +80,8 @@ let imageWMSLayerZoning = new ol.layer.Image({
     visible: false
 });
 
+
+
 let map = new ol.Map({
     // use OL3-Google-Maps recommended default interactions
     interactions: olgm.interaction.defaults(),
@@ -101,6 +102,7 @@ let map = new ol.Map({
 
 let olGM = new olgm.OLGoogleMaps({map: map}); // map is the ol.Map instance
 olGM.activate();
+
 
 (function ($) {
 
