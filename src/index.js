@@ -80,8 +80,6 @@ let imageWMSLayerZoning = new ol.layer.Image({
     visible: false
 });
 
-
-
 let map = new ol.Map({
     // use OL3-Google-Maps recommended default interactions
     interactions: olgm.interaction.defaults(),

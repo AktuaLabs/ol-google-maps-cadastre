@@ -12,7 +12,7 @@ $('#search-form').on('submit', function (e) {
     e.stopImmediatePropagation();
 
     const reference = $(this).find('[name=refcat]').val();
-    cadaster.fetchFeature(reference, (feature) => {
+    cadaster.fetchFeature(reference).then((feature) => {
         gmap.addVectorLayer(feature.posList);
         gmap.setCenter(feature.pos);
         gmap.setZoom(18);
