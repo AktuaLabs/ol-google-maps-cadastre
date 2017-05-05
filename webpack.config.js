@@ -2,8 +2,8 @@ var path = require('path');
 
 module.exports = {
     entry: {
-        index: './src/index.js',
-        vector: './src/vector.js'
+        wms: './src/wms.js',
+        wfs: './src/wfs.js'
     },
     output: {
         filename: '[name].js',
