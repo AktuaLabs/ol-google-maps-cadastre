@@ -15,7 +15,7 @@ $('#search-form').on('submit', function (e) {
     cadaster.fetchFeature(reference, (feature) => {
         gmap.addVectorLayer(feature.posList);
         gmap.setCenter(feature.pos);
-        gmap.setZoom(16);
+        gmap.setZoom(18);
     });
 });
 
