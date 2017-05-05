@@ -3,7 +3,8 @@ var path = require('path');
 module.exports = {
     entry: {
         wms: './src/wms.js',
-        wfs: './src/wfs.js'
+        wfs: './src/wfs.js',
+        gmaps: './src/gmaps.js'
     },
     output: {
         filename: '[name].js',
